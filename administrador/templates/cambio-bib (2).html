@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modificacion de la Base de Datos</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&display=swap');
+      </style>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-xrR+xx+K1uOoW3pXs9b2D7FjO8j4lYi6kKxX+2Z7yZ7z9IfwL1gk7bDySv+5zv1U" crossorigin="anonymous">
+
+          <script src="https://kit.fontawesome.com/28d049d17c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="../index_admin.html"><img src="../../img/gif_unlam.gif" alt="gif unlam" height="50px" width="50px">Home</a> 
+    </header>
+    <main>
+<div class="container">
+    <div class="column">
+        
+        <img class="banner-ing-elec" src="../../img/unlam banner vertical.jpg" alt="Ingenieria Electronica">
+    </div>
+    
+
+    <div class="column">
+    
+        <form action="/alterar" method="post,get">
+            <br><br><br><br>
+            <label for="ID">Identificador</label>
+            <input type="text" name="ID" placeholder="ID">
+            <br>
+            <label for="descripcion">Descripción</label>
+            <input type="text" name="descripcion" placeholder="descripcion">
+            <br>
+            <label for="idioma">Idioma</label>
+            <input type="text" name="idioma" placeholder="idioma">
+            <br>
+            <label for="tipo">Tipo</label>
+            <input type="text" name="tipo" placeholder="tipo">
+            <br>
+            <label for="ubicacion">Ubicación</label>
+            <input type="text" name="ubicacion" placeholder="ubicacion">
+            <br>
+            <label for="instAsociado">Instrumento Asociado</label>
+            <input type="text" name="instAsociado" placeholder="Instrumento asociado">
+        
+            <!-- Botones -->
+            <br><br><br><br>
+            <button type="submit" name="cambiarDato" value="modificar">Modificar</button>
+            <button type="submit" name="borrarDato" value="eliminar">Eliminar</button>
+            <br><br>
+            <a href='../administrador/index_admin.html'>Atras</a>
+        </form>
+        
+    </div>
+</div>
+</div>
+    </main>
+    <footer class="footer">Hecho por maria alejandra balmaceda</footer>
+</body>
+
+</html>
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modificacion de la Base de Datos</title>
+    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&display=swap');
+      </style>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-xrR+xx+K1uOoW3pXs9b2D7FjO8j4lYi6kKxX+2Z7yZ7z9IfwL1gk7bDySv+5zv1U" crossorigin="anonymous">
+
+          <script src="https://kit.fontawesome.com/28d049d17c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html"><img src="../../img/gif_unlam.gif" alt="gif unlam" height="50px" width="50px">Home</a> 
+    </header>
+    <main>
+        <div class="container"> <!-- aca pongo el div ppal -->
+           
+            <div class="columna"> <!-- aca pongo la imagen que va a ser un banner vertical -->
+              <img class="banner-ing-elec" src="../../img/unlam banner vertical.jpg" alt="Ingenieria Electronica"> 
+                
+            </div>
+        
+
+        <div class="columna">
+    
+            <form id="form" action="/libros" method="post">
+                <br><br><br><br>
+                <label for="id">Id</label>
+                <input type="text" name="id" placeholder="id">
+                <br>
+                <label for="descripcion">Descripción</label>
+                <input type="text" name="descripcion" placeholder="descripcion">
+                <br>
+                <label for="idioma">Idioma</label>
+                <input type="text" name="idioma" placeholder="idioma">
+                <br>
+                <label for="tipo">Tipo</label>
+                <input type="text" name="tipo" placeholder="tipo">
+                <br>
+                <label for="ubicacion">Ubicación</label>
+                <input type="text" name="ubicacion" placeholder="ubicacion">
+                <br>
+                <label for="instAsociado">Instrumento Asociado</label>
+                <input type="text" name="instAsociado" placeholder="Instrumento asociado">
+            
+            <!-- Botones -->
+                <br><br><br><br>
+                <center><button class="button comun" type="submit" name="insertarDato" value="insertar">Ingresar</button><br>
+                <center><button class="button alternative" type="submit" name="cambiarDato" value="modificar">Modificar</button><br>
+                <center><button class="button alternative1"type="submit" name="borrarDato" value="eliminar">Eliminar</button>
+                 <br><br>
+                <a href='../index_admin.html'>Atras</a>
+            </form>
+        </div>
+    </div>
+
+    </main>
+    <footer class="footer">Hecho por alejandra y priscila</footer>
+    <script>
+        const URL = "http://127.0.0.1:5500/"
+
+        document.getElementById('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form 
+
+            var formData = new FormData(this);
+    
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'libros', {
+                method: 'POST',
+                body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
+            })
+
+            //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
+            .then(function (response) {
+                    if (response.ok) { 
+                        //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                        return response.json(); 
+                    } else {
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                        throw new Error('Error al agregar el libro.');
+                    }
+            })
+
+                //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+                .then(function (data) {
+                    alert('Libro agregado correctamente.');
+                })
+
+                // En caso de error, mostramos una alerta con un mensaje de error.
+                .catch(function (error) {
+                    alert('Error al agregar el libro...');
+                })
+
+                // Limpiar el formulario en ambos casos (éxito o error)
+                .finally(function () {
+                    document.getElementById('id').value = "";
+                    document.getElementById('descripcion').value = "";
+                    document.getElementById('idioma').value = "";
+                    document.getElementById('tipo').value = "";
+                    document.getElementById('ubicacion').value = "";
+                    document.getElementById('instrumento_asociado').value = "";
+                });
+        })
+    </script>
+</body>
+
+</html>
+
