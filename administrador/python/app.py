@@ -1,5 +1,5 @@
 import mysql.connector
-
+import json
 conexion1=mysql.connector.connect(host="localhost", user="root", passwd="", database="unlamdb")
 cursor=conexion1.cursor()
 cursor.execute("show databases")
@@ -9,8 +9,8 @@ for base in cursor:
 
 # Instalar con pip install Flask
 from flask import Flask, request, jsonify, render_template
-from flask import request
 
+app = Flask(__name__)
 # Instalar con pip install flask-cors
 from flask_cors import CORS
 
@@ -18,8 +18,8 @@ print(0)
 
 #--------------------------------------------------------------------
 
-from flask import Flask, render_template, request
-app = Flask(__name__)
+
+
 
 
 
@@ -133,7 +133,7 @@ class Catalogo:
             print("librp no encontrado.")
 
 # # Rutas para el menú de opciones
-from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
