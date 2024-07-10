@@ -1,0 +1,335 @@
+* {
+    /*aca va el principal*/
+    border: 0;
+    padding: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightgeen;
+    box-sizing: border-box;
+    
+}
+
+body{
+    color:black;
+    background-color:lightgreen;
+}
+
+header{
+ background-color: darkgreen;   
+}
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:auto;
+    padding: 0%;
+    border: 0;
+}
+
+h1{
+    color:crimson;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    font-style:normal;  
+    text-align: center;
+    font-weight: bold;
+}
+
+h3{
+    color: black;
+}
+
+.custom-h3{
+    font-size: small;
+}
+
+.container{
+        display: flex; 
+        width: auto;
+}
+
+.content{
+    /* flex-grow: 1;    */
+    display:flex;
+}
+
+.columna{    
+    justify-content: left;
+    align-items: flex-start; 
+    margin-right: 0px;
+    margin-left: 0px;
+    padding:0px;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&display=swap'); */
+p{ 
+    color: red; 
+    font-size:12px;
+    font-family:Courier;
+    border:2px;
+    margin:0px;
+    width:200px; 
+    height:100px;
+}
+
+.menu{
+    color:brown;
+    font-family: 'Tangerine', serif;
+    font-size: 20px;
+    
+}
+
+.videoteca{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.tarjeta-video{
+    width: 250px;
+    margin:10px;
+    padding: 10px;
+    border:1px solid black;
+    text-align: center;
+    
+}
+
+.videoteca-grid{
+    display:grid;
+    grid-template-areas: repeat(2,1fr);
+    gap:5px;
+    grid-template-rows: 5;
+    grid-template-columns: 5;
+    color:purple;
+}
+
+.tarjeta-video-grid{
+    padding:5px;
+    border:2px solid darkred;
+    color:black;
+
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:auto;
+    background-color: green;
+    color: red;
+    text-align: center;
+    padding: 0px;
+  }
+  
+
+ 
+
+footer{
+     background-color:magenta;
+    color:darkorange;
+    font-size: small;
+} 
+
+a:hover{
+    color:darkgreen;
+    text-decoration-color: blueviolet;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.miEnlace:hover{
+    font-family: cursive;
+    font-size: smaller;
+}
+
+.videoteca-grid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,250px);
+    gap: 10px;
+
+}
+.tarjeta-video-grid{
+    background-color: aquamarine;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.menu{
+    width:25%;
+    float: left;
+}
+
+.main{
+    width: 75%;
+    float:left;
+}
+
+
+img {
+    border: 0px;
+    padding: 0px;
+  }
+  
+.banner-ing-elec {
+    max-width:50%;
+    height:100vh;    
+    object-fit: cover;
+    margin:0px;
+
+}
+  
+
+form{
+padding:0px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20;
+}
+
+
+.titulos{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+input, textarea{
+    background-color: aquamarine;  
+    border-style: solid; 
+    border-color: aqua;
+    color:blue;
+}
+
+.custom-button{
+    background-color:darkgreen;
+    color: black;
+    border-radius: 3px;
+    border-style: dashed;
+    width: 100px;
+    height: 30px;
+    font-weight: 700;
+    cursor:pointer;
+}
+.custom-button:hover{
+    background-color: yellow;
+}
+
+.texto-basico1{
+    color:darkviolet;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+table {
+    border-collapse: collapse;
+    width:auto;
+}
+
+.tabla{
+    border: darkblue;
+    border-style: solid;
+    margin-top: 0cm;
+    margin-bottom: 0cm;
+}
+.custom-th{
+    border: darkblue;
+    border-style: solid;  
+}
+.custom-tr{
+    border: darkblue;
+    border-style: solid;   
+}
+td {
+    /* padding: 1px; */
+    border: darkblue;
+    border-style: solid;
+}
+
+li{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ @media only screen and (max-width: 300px) { 
+    header{
+        height: 20%;
+        color:white;
+        background-color: green;
+        font-size: small;
+    }
+   
+    main{
+        font-family: 'Times New Roman', Times, serif;
+      color:black ;
+      padding: 5px;
+      font-size: smaller;
+    }
+    .menu{
+        font-size: smaller;
+    }
+    footer{
+        font-family:fantasyar;
+        background-color: red;
+        color:darkorange;
+        font-size:smaller;
+    }
+  }
+  
+@media only screen and (max-width: 600px) {
+   
+    header{
+        height: 25%;
+        color: white;
+        background-color: green; 
+        font-size:medium;
+    }
+    main{
+        font-family: Arial, Helvetica, sans-serif;
+      color:crimson;
+      padding: 15px;
+      font-size: small;
+      
+    }
+    .menu{
+        font-size: small; 
+    }
+   footer{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: darkmagenta;
+        color:green;
+        font-size: small;
+    }
+  }
+@media only screen and (min-width: 600px) {
+    header{
+        height: 30%;
+        color:black;
+        background-color: green; 
+        font-size:large;
+    }
+    main{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:blueviolet;
+      padding: 20px;
+      font-size: medium;
+    }
+    .menu{
+        font-size: medium;
+    }
+   footer{
+        font-family:cursive;
+        background-color: rgb(248, 87, 221); 
+        color:blue;
+        font-size:medium;
+    }
+  } 
