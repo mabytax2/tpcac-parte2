@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Contacto</title>
+    
+    <!-- <style>
+      @import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&display=swap');
+      </style> -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-xrR+xx+K1uOoW3pXs9b2D7FjO8j4lYi6kKxX+2Z7yZ7z9IfwL1gk7bDySv+5zv1U" crossorigin="anonymous">
+<link rel="stylesheet" href="./css/styles.css">
+          <script src="https://kit.fontawesome.com/28d049d17c.js" crossorigin="anonymous"></script>
+          <script src="./scripts/scripts.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+      <a href="../index.html"><img src="../img/gif_unlam.gif " height="50px" width="50px" alt="">Home</a>
+        <!-- <a href="./index.html"><i class="fa-solid fa-house-chimney "></i>Home</a> -->
+        <!-- <a href="./index.html"><img src="./img/letra-e.gif " height="50px" width="50px" alt="">Home</a> -->
+        <br><br>
+        <h1><i class="fa-regular fa-heart fa-beat"></i> Página de Contacto <i class="fa-solid fa-ghost fa-spin"></i></h1>
+
+      </header>
+    <main>
+      <div class="container"> <!-- aca pongo el div ppal -->
+        <br><br><br>
+        <div class="columna"> <!-- aca pongo la imagen que va a ser un banner vertical -->
+          <br><br><br>
+            <img id="banner-ing-elec"     src="./img/unlam banner vertical.jpg" alt="Ingenieria Electronica">
+        </div>
+        <div class="columna">
+          <br><br><br><br><br>
+           <h1 class="titulos">Formulario de Contacto...</h1>
+            <form action="/my-handling-form-page" method="post">
+
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="user_name" required/>
+                 <br><br>
+
+                 <label for="mail">Correo electrónico:</label>
+                 <input type="email" id="mail" name="user_mail" required/>
+
+                 <br><br>
+                 <label for="tipo-m">Selecciona un tipo de mensaje: </label>
+                 <select name="tipo-m" id="tipo-m">
+                   <option value="comentario">Escribir un comentario</option>
+                   <option value="pregunta">Escribir una pregunta</option>
+                   <option value="queja">Escribir una queja</option>
+                   </select>
+              <br><br>
+                   <label for="fileInput">Ingrese su archivo a revisar</label>
+                   <input type="file" id="fileInput">
+                   <br><br>
+                  <label for="msg">Mensaje:</label>
+                  <textarea id="msg" name="user_message" required></textarea>
+              <br>
+              <br>
+         <input type="checkbox" id="checkbox" name="checkbox" required>
+         <label for="checkbox" >Acepto los términos y condiciones</label>
+         <br>
+         <button class="button alternative1" type="submit">Enviar formulario</button>
+         <br><br>
+       </form>
+     </div>
+    </div>
+  </main>
+    <footer class="footer">
+      Hecho por maria alejandra balmaceda
+    </footer>
+
+</body>
+</html>
