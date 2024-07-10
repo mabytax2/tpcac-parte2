@@ -18,6 +18,10 @@ print(0)
 
 #--------------------------------------------------------------------
 
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+
 
 
 app = Flask(__name__)
@@ -129,11 +133,18 @@ class Catalogo:
             print("librp no encontrado.")
 
 # # Rutas para el menú de opciones
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def form():
+    return render_template('cambio-bib.html')
+
 @app.route('/')
 def menu():
     return render_template('index_admin.html')
 
-@app.route('/insertar', methods=['POST'])
+@app.route('/libros/insertar', methods=['POST'])
 def insertar_libro():
     if request.method == 'POST':
         nid = request.form['id']
