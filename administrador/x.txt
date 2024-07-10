@@ -1,0 +1,16 @@
+
+[{"file_name":"","file_content":
+"def agregar_libro(self, libro_id, descripcion, idioma, tipo, ubicacion, instrumento_asociado):\n               \n        sql = \"INSERT INTO libros (id, descripcion, idioma, tipo, ubicacion, instrumento_asociado) VALUES (%s, %s, %s, %s, %s, %s)\"\n        valores = (libro_id, descripcion, idioma, tipo, ubicacion, instrumento_asociado)\n\n        self.cursor.execute(sql, valores)        \n        self.conn.commit()\n        return self.cursor.lastrowid","url":"","url_content":""}]
+[{"file_name":"","file_content":"class Catalogo:\n    
+#----------------------------------------------------------------\n   
+ # Constructor de la clase\n    def __init__(self, host, user, password, database):\n       
+  # Primero, establecemos una conexión sin especificar la base de datos\n        
+  self.conn = mysql.connector.connect(\n  host=host,\n            user=user,\n            password=password\n        )\n       
+   self.cursor = self.conn.cursor()\n\n       
+    # Intentamos seleccionar la base de datos\n       
+     try:\n            self.cursor.execute(f\"USE {database}\")\n        
+     except mysql.connector.Error as err:\n            return f\"Error de base de datos\"\n            #Si la base de datos no existe, la creamos\n            if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:\n                self.cursor.execute(f\"CREATE DATABASE {database}\")\n                self.conn.database = database\n            else:\n                raise err\n\n        # Una vez que la base de datos está establecida, creamos la tabla si no existe\n        self.cursor.execute('''CREATE TABLE `libros` (\n            `id` varchar(8) NOT NULL,\n            `descripcion` text NOT NULL,\n            `idioma` text NOT NULL,\n            `tipo` text NOT NULL,\n            `ubicacion` text NOT NULL,\n            `instrumento_asociado` text NOT NULL\n            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;\n            ''')\n        self.conn.commit()\n\n        # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True\n        #self.cursor.close()\n        self.cursor = self.conn.cursor(dictionary=True)\n        \n    #----------------------------------------------------------------\n    def agregar_libro(self, libro_id, descripcion, idioma, tipo, ubicacion, instrumento_asociado):\n               \n        sql = \"INSERT INTO libros (id, descripcion, idioma, tipo, ubicacion, instrumento_asociado) VALUES (%s, %s, %s, %s, %s, %s)\"\n        valores = (libro_id, descripcion, idioma, tipo, ubicacion, instrumento_asociado)\n\n        self.cursor.execute(sql,valores )        \n        self.conn.commit()\n        return self.cursor.lastrowid","url":"","url_content":""}]
+
+
+
+id, descripcion, idioma, tipo, ubicacion, instrumento_asociado
